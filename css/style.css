@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Epilogue';
+    position: relative;
+    overflow-x: hidden;
+}
+main, header, footer  {
+    width: 375px;
+}
+/* HEADER */
+nav {
+    margin: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.open {
+    cursor: pointer;
+}
+/* HEADER */
+/* CONTAINER */
+.textContainer {
+    text-align: center;
+}
+.title {
+    color: var(--almost-black);
+    margin: 1rem 0;
+}
+.text {
+    color: var(--medium-gray);
+    line-height: 1.5em;
+    font-size: 17px;
+}
+.learn {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--almost-white);
+    border-radius: 1rem;
+    background-color: var(--almost-black);
+    border: 1px solid var(--almost-black);
+    margin: 1rem 0 1.5rem;
+}
+.learn:hover {
+    background-color: var(--almost-white);
+    color: var(--almost-black);
+}
+.desktop {
+    display: none;
+}
+.mobile {
+    width: 100%;
+}
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logos img {
+    width: 70px;
+}
+.logos img:nth-child(2) {
+    width: 50px;
+}
+/* CONTAINER */
+/* CREDITS */
+.attribution {
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--almost-black);
+}   
+.attribution a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--almost-black);
+}
+.attribution a:hover {
+    color: var(--medium-gray);
+}
+/* CREDITS */
+/* MENU ACTIVE */
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    background-color: var(--almost-white);
+    right: -115vw;
+    width: 60vw;
+    height: 100%;
+    padding: 1.5rem;
+    transition: all 0.4s ease-in;
+}
+.close {
+    width: 25px;
+    align-self: end;
+    cursor: pointer;
+    text-align: end;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+.tags {
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+.menu p{
+    text-decoration: none;
+    color: var(--medium-gray);
+    display: flex;
+    align-items: center;
+}
+.tags a:hover, .title-menu:hover {
+    color: var(--almost-black) !important;
+}
+.icon-down {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.tag {
+    display: flex;
+    align-items: center;
+}
+.icon-down img {
+    margin-left: 10%;
+}
+.active .modal {
+    right: 0vw;
+}
+.features, .company {
+    position: absolute;
+    height: 0;
+    opacity: 0;
+    top: -15%;
+}
+.company {
+    margin-left: 1.2rem;
+}
+.features a, .company a  {
+    text-decoration: none;
+    color: var(--medium-gray);
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    font-size: 14px;
+}
+.features a img { 
+    width: 15px;
+    margin-right: 1rem;
+}
+.show .features, .show .company {
+    position: relative;
+    height: 100%;
+    opacity: 1;
+    top: 0%;
+    transition: all 0.4s ease-in;
+}
+.menu {
+    margin-bottom: 1.5rem;
+    font-size: 14px;
+}
+.sign {
+    display: flex;
+    flex-direction: column;
+}
+.login, .register {
+    font-size: 14px;
+    padding: 0.7rem 0;
+    text-align: center;
+    text-decoration: none;
+    color: var(--medium-gray);
+    border-radius: 1rem;
+}
+.register {
+    border: 2px solid var(--medium-gray);
+}
+.login:hover {
+    color: var(--almost-black);
+}
+.register:hover {
+    border: 2px solid var(--almost-black);
+    color: var(--almost-black);
+
+}
+/* MENU ACTIVE */
+
+@media screen and (min-width:900px) {
+    body {
+        height: 100%;
+        position: none;
+    }
+    main, header, footer  {
+        width: 1050px;
+    }
+    /* HEADER */
+    nav {
+        position: relative;
+        align-items: center;
+        justify-content: left;
+    }
+    .open, .close {
+        display: none;
+    }
+    .modal {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        top: 0;
+        right: 0vw;
+        width: 100%;
+        height: 0%;
+        padding: 0rem;
+    }
+    .menu {
+        align-items: center;
+        flex-direction: row;
+    }
+    .company {
+        margin-left: 1.2rem;
+    }
+    .features a, .company a  {
+        margin-top: 1rem;
+    }
+    .show .features, .show .company {
+        position: absolute;
+        margin-top: 1.5rem;
+        opacity: 1;
+        top: 0%;
+        background-color: var(--almost-white);
+        box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+        transition: all 0.2s ease-in;
+    }
+    .show .features {
+        margin-left: -3rem;
+        height: 140px;
+        width: 130px;
+
+    }
+    .show .company {
+        height: 110px;
+        width: 90px;
+        padding-left: 0.7rem;
+        margin-left: 0rem;
+    }
+    .tags {
+        margin-top: 0rem;
+        margin-right: 3rem;
+    }
+    .snap {
+        margin-right: 4rem;
+    }
+    .active .modal {
+        right: 0vw;
+    }
+    .menu {
+        margin-bottom: 0rem;
+    }
+    .login, .register {
+        display: block;
+        padding: 0.8rem 1.4rem;
+    }
+    .desktop {
+        display: block;
+        width: 35%;
+        margin-right: 4rem;
+    }
+    .mobile {
+        display: none;
+    }
+    .container {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .textContainer {
+        margin: 5.5rem auto 0;
+        width: 40%;
+        text-align: left;
+    }
+    .learn {
+        margin: 2rem 0;
+        padding: 1rem 2.5rem;
+    }
+    .title {
+        font-size: 62px;
+    }
+    .logos {
+        margin-top: 2rem;
+    }
+    .logos img {
+        width: 80px;
+    }
+    .logos img:nth-child(2) {
+        width: 50px;
+    }
+    .attribution {
+        margin: 1rem 0 0rem;
+        font-size: 14px;
+    } 
+    .sign {
+        width: 180px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
